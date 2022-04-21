@@ -1,12 +1,12 @@
 package racingcar.missionutil;
 
+import camp.nextstep.edu.missionutils.Randoms;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class PickNumberInRangeTest {
@@ -17,7 +17,7 @@ public class PickNumberInRangeTest {
         //given:
         int number;
         //then:
-        number = pickNumberInRange(10, 20);
+        number = Randoms.pickNumberInRange(10, 20);
         //then:
         assertThat(number)
                 .isGreaterThan(9)
@@ -31,9 +31,9 @@ public class PickNumberInRangeTest {
         List<Integer> numberList;
         //when:
         numberList = Arrays.asList(
-                pickNumberInRange(1, 9)
-                , pickNumberInRange(1, 9)
-                , pickNumberInRange(1, 9));
+                Randoms.pickNumberInRange(1, 9)
+                , Randoms.pickNumberInRange(1, 9)
+                , Randoms.pickNumberInRange(1, 9));
         //then:
         assertThat(numberList)
                 .containsAnyOf(1, 2, 3, 4, 5, 6, 7, 8, 9);
