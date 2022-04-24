@@ -7,22 +7,10 @@ import camp.nextstep.edu.missionutils.Randoms;
  */
 public class RandomGenerator {
 
-    private final Number min;
-    private final Number max;
-
-    /**
-     * @param min 최소 값
-     * @param max 최대 값
-     */
-    public RandomGenerator(Number min, Number max) {
-        this.min = min;
-        this.max = max;
-    }
-
     /**
      * @return 난수 생성
      */
-    public int generate() {
+    public static int generate(Number min, Number max) {
         return Randoms.pickNumberInRange(min.getNum(), max.getNum());
     }
 }
