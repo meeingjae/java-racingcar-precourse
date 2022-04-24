@@ -18,12 +18,11 @@ public class Score {
         return this.score;
     }
 
-    public Score stopOrAdvance() {
+    public void stopOrAdvance() {
         int generatedNumber = RandomGenerator.generate(SCORE_RANGE_MIN, SCORE_RANGE_MAX);
         if (isAdvance(generatedNumber)) {
             this.score += ADVANCE;
         }
-        return this;
     }
 
     public int getScoreCount() {
