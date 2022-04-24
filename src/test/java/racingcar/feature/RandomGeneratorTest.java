@@ -14,27 +14,27 @@ public class RandomGeneratorTest {
     @Test
     void generateSingleTest() {
         //given:
-        RandomGenerator generator = new RandomGenerator(new Number(0), new Number(9));
+        List<Integer> numberList;
         //when:
-        List<Integer> numberList = Arrays.asList(
-                generator.generate(),
-                generator.generate(),
-                generator.generate());
+        numberList = Arrays.asList(
+                RandomGenerator.generate(new Number(0), new Number(9)),
+                RandomGenerator.generate(new Number(0), new Number(9)),
+                RandomGenerator.generate(new Number(0), new Number(9)));
         //then:
         assertThat(numberList)
-                .containsAnyOf(0,1, 2, 3, 4, 5, 6, 7, 8, 9);
+                .containsAnyOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
     }
 
     @DisplayName("NumberGenerator - 네 자리 수 생성 테스트")
     @Test
     void generateTrebleFigureTest() {
         //given:
-        RandomGenerator generator = new RandomGenerator(new Number(1000), new Number(1005));
+        List<Integer> numberList;
         //when:
-        List<Integer> numberList = Arrays.asList(
-                generator.generate(),
-                generator.generate(),
-                generator.generate());
+        numberList = Arrays.asList(
+                RandomGenerator.generate(new Number(1000), new Number(1005)),
+                RandomGenerator.generate(new Number(1000), new Number(1005)),
+                RandomGenerator.generate(new Number(1000), new Number(1005)));
         //then:
         assertThat(numberList)
                 .containsAnyOf(1000, 1001, 1002, 1003, 1004, 1005);
