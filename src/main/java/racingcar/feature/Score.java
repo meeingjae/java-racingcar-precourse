@@ -14,9 +14,13 @@ public class Score {
         this.score = INITIALIZE_SCORE;
     }
 
+    public String getScore() {
+        return this.score;
+    }
+
     public Score stopOrAdvance() {
-        RandomGenerator generator = new RandomGenerator(new Number(SCORE_RANGE_MIN), new Number(SCORE_RANGE_MAX));
-        if (generator.generate() >= ADVANCE_SCORE) {
+        int generatedNumber = RandomGenerator.generate(new Number(SCORE_RANGE_MIN), new Number(SCORE_RANGE_MAX));
+        if (isAdvance(generatedNumber)) {
             this.score += ADVANCE;
         }
         return this;
@@ -24,5 +28,9 @@ public class Score {
 
     public int getScoreCount() {
         return score.toCharArray().length;
+    }
+
+    private boolean isAdvance(int generatedNumber) {
+        return generatedNumber >= ADVANCE_SCORE;
     }
 }
