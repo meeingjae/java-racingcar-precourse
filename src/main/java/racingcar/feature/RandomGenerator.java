@@ -10,7 +10,7 @@ public class RandomGenerator {
     /**
      * @return 난수 생성
      */
-    public static int generate(Number min, Number max) {
-        return Randoms.pickNumberInRange(min.getNum(), max.getNum());
+    public static int generate(int min, int max) {
+        return Randoms.pickNumberInRange(min, max);
     }
 }
