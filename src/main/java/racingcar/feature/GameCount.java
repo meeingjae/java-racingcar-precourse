@@ -1,7 +1,6 @@
 package racingcar.feature;
 
 public class GameCount {
-
     private final int count;
 
     public GameCount(String input) {

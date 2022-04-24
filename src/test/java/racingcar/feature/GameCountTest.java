@@ -35,6 +35,6 @@ public class GameCountTest {
         //then:
         assertThat(exception)
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("[ERROR] 시도할 회수를 정확히 입력해주세요");
+                .hasMessage("[ERROR] 시도할 회수를 정확히 입력해 주세요");
     }
 }
