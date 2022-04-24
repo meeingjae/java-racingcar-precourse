@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class RandomGeneratorTest {
 
-    @DisplayName("NumberGenerator - 한 자리 수 생성 테스트")
+    @DisplayName("난수 생성기 - 한 자리 수 생성 테스트")
     @Test
     void generateSingleTest() {
         //given:
@@ -25,7 +25,7 @@ public class RandomGeneratorTest {
                 .containsAnyOf(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
     }
 
-    @DisplayName("NumberGenerator - 네 자리 수 생성 테스트")
+    @DisplayName("난수 생성기 - 네 자리 수 생성 테스트")
     @Test
     void generateTrebleFigureTest() {
         //given:
