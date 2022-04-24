@@ -19,7 +19,7 @@ public class Score {
     }
 
     public Score stopOrAdvance() {
-        int generatedNumber = RandomGenerator.generate(new Number(SCORE_RANGE_MIN), new Number(SCORE_RANGE_MAX));
+        int generatedNumber = RandomGenerator.generate(SCORE_RANGE_MIN, SCORE_RANGE_MAX);
         if (isAdvance(generatedNumber)) {
             this.score += ADVANCE;
         }
