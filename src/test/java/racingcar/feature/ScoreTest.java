@@ -12,7 +12,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.anyInt;
 
 public class ScoreTest {
-
     MockedStatic<Randoms> randoms;
 
     @BeforeEach
@@ -20,7 +19,7 @@ public class ScoreTest {
         randoms = Mockito.mockStatic(Randoms.class);
     }
 
-    @DisplayName("Score - 점수 생성 기본 테스트")
+    @DisplayName("점수 - 점수 생성")
     @Test
     public void createScoreTest() {
         //given:
@@ -31,12 +30,11 @@ public class ScoreTest {
                 .isEqualTo(0);
     }
 
-    @DisplayName("Score - 전진 기본 테스트")
+    @DisplayName("점수 - 전진")
     @Test
     public void advanceTest() {
         //given:
-        randoms.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
-                .thenReturn(4);
+        randoms.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt())).thenReturn(4);
         Score score = new Score();
         //when:
         score.stopOrAdvance();
@@ -45,12 +43,11 @@ public class ScoreTest {
                 .isEqualTo(1);
     }
 
-    @DisplayName("Score - 멈춤 기본 테스트")
+    @DisplayName("점수 - 멈춤")
     @Test
     public void stopTest() {
         //given:
-        randoms.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt()))
-                .thenReturn(3);
+        randoms.when(() -> Randoms.pickNumberInRange(anyInt(), anyInt())).thenReturn(3);
         Score score = new Score();
         //when:
         score.stopOrAdvance();
