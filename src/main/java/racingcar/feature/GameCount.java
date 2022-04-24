@@ -15,7 +15,7 @@ public class GameCount {
         try {
             return Integer.parseInt(count);
         } catch (Exception e) {
-            throw new IllegalArgumentException("[ERROR] 시도할 회수를 정확히 입력해 주세요");
+            throw new IllegalArgumentException("[ERROR] 시도할 횟수를 정확히 입력해 주세요");
         }
     }
 }

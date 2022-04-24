@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class GameCountTest {
 
-    @DisplayName("게임 회수 - 게임 회수 생성")
+    @DisplayName("게임 횟수 - 게임 횟수 생성")
     @Test
     void createGameCountTest() {
         //given:
@@ -20,7 +20,7 @@ public class GameCountTest {
                 .isEqualTo(3);
     }
 
-    @DisplayName("게임 회수 - 예외 - 숫자가 아닌 문자열 입력")
+    @DisplayName("게임 횟수 - 예외 - 숫자가 아닌 문자열 입력")
     @Test
     void parseNumberExceptionTest() {
         //given:
@@ -35,6 +35,6 @@ public class GameCountTest {
         //then:
         assertThat(exception)
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("[ERROR] 시도할 회수를 정확히 입력해 주세요");
+                .hasMessage("[ERROR] 시도할 횟수를 정확히 입력해 주세요");
     }
 }
