@@ -11,7 +11,6 @@ public class CarNameTest {
 
     @Test
     void 자동차이름_생성_성공() {
-
         CarName carName = new CarName(NAME);
         String name = carName.getName();
         assertThat(name).isEqualTo(NAME);
@@ -19,7 +18,6 @@ public class CarNameTest {
 
     @Test
     void 자동차이름_생성_실패_공백() {
-
         assertThatThrownBy(() -> {
             CarName carName = new CarName("");
         }).isInstanceOf(IllegalArgumentException.class);
