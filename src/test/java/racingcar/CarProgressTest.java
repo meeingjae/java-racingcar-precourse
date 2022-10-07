@@ -11,7 +11,7 @@ public class CarProgressTest {
 
         CarProgress progress = new CarProgress();
         int count = progress.getCount();
-        assertThat(progress).isEqualTo(0);
+        assertThat(count).isEqualTo(0);
     }
 
     @Test
@@ -20,9 +20,9 @@ public class CarProgressTest {
         CarProgress progress = new CarProgress();
         //when:
         progress.plusProgress();
-        int progress = progress.getCount();
+        int count = progress.getCount();
         //then:
-        assertThat(progress).isEqualTo(1);
+        assertThat(count).isEqualTo(1);
     }
 
     @Test
