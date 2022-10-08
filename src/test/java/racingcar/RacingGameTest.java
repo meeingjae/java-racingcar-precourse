@@ -11,22 +11,23 @@ public class RacingGameTest {
 
     @Test
     void 레이싱게임_생성() {
-        MockedStatic<Console> consoleMockedStatic = Mockito.mockStatic(Console.class);
-        consoleMockedStatic.when(Console::readLine)
-                .thenReturn("1,2,3");
-        RacingGame racingGame = new RacingGame();
-        racingGame.init();
+        try (MockedStatic<Console> consoleMockedStatic = Mockito.mockStatic(Console.class)) {
+            consoleMockedStatic.when(Console::readLine)
+                    .thenReturn("1,2,3");
+            RacingGame racingGame = new RacingGame();
+            racingGame.init();
+        }
     }
 
     @Test
     void 레이싱게임_생성_예외_사용자입력_없음() {
-        MockedStatic<Console> consoleMockedStatic = Mockito.mockStatic(Console.class);
-        consoleMockedStatic.when(Console::readLine)
-                .thenReturn("");
-
-        assertThatThrownBy(() -> {
-            RacingGame racingGame = new RacingGame();
-            racingGame.init();
-        }).isInstanceOf(IllegalArgumentException.class);
+        try (MockedStatic<Console> consoleMockedStatic = Mockito.mockStatic(Console.class)) {
+            consoleMockedStatic.when(Console::readLine)
+                    .thenReturn("");
+            assertThatThrownBy(() -> {
+                RacingGame racingGame = new RacingGame();
+                racingGame.init();
+            }).isInstanceOf(StackOverflowError.class);
+        }
     }
 }
