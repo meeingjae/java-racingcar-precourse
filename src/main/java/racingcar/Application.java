@@ -1,7 +1,12 @@
 package racingcar;
 
 public class Application {
+
+    public static final String ERROR_HEADER = "[ERROR]";
+
     public static void main(String[] args) {
-        // TODO: 프로그램 구현
+        RacingGame racingGame = new RacingGame();
+        racingGame.init();
+        racingGame.race();
     }
 }
